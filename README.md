@@ -47,10 +47,10 @@ Grab Node dependencies - from the web/ directory, run:
 
 Front end assets are compiled using GruntJS.  The following commands are currently available:
 
-    grunt - default command will run JSHint, concat, and Compass compilation of SASS
-    grunt lint - runs JSHint
-    grunt build - JSHint, concat, uglify and Compass compilation with production environment settings
-    grunt watch - watch and compile assets as they change
+`grunt` - default command will run JSHint, concat, and Compass compilation of SASS
+`grunt lint` - runs JSHint
+`grunt build` - JSHint, concat, uglify and Compass compilation with production environment settings
+`grunt watch` - watch and compile assets as they change
 
 #### Client access
 
