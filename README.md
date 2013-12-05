@@ -17,15 +17,15 @@ Grab a copy of the project: `git clone https://github.com/jaredmoran/grapeout.gi
 
 Install dependencies:
 
-    `bundle install`
+    bundle install
 
 Create the database:
 
-    `rake db:setup`
+    rake db:setup
 
 Start the API server:
 
-    `ruby server.rb -vs`
+    ruby server.rb -vs
 
 API will be available at: http://localhost:9000/v1/
 
@@ -43,14 +43,14 @@ Now it's time to set up the front end build process and assets.
 
 Grab Node dependencies - from the web/ directory, run:
 
-    `npm install`
+    npm install
 
 Front end assets are compiled using GruntJS.  The following commands are currently available:
 
-    `grunt` - default command will run JSHint, concat, and Compass compilation of SASS
-    `grunt lint` - runs JSHint
-    `grunt build` - JSHint, concat, uglify and Compass compilation with production environment settings
-    `grunt watch` - watch and compile assets as they change
+    grunt` - default command will run JSHint, concat, and Compass compilation of SASS
+    grunt lint` - runs JSHint
+    grunt build` - JSHint, concat, uglify and Compass compilation with production environment settings
+    grunt watch` - watch and compile assets as they change
 
 #### Client access
 
