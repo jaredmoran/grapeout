@@ -3,6 +3,7 @@ var API_HOST = "http://grapeout.herokuapp.com/",
     API_BASE = API_HOST + API_VERSION,
     view;
 
+// User model data
 function User(data) {
     this.username = ko.observable(data.username);
     this.first_name = ko.observable(data.first_name);
@@ -24,6 +25,7 @@ function User(data) {
     }, this);
 }
 
+// User ViewModel
 function UsersViewModel() {
     var self = this;
     self.users = ko.observableArray([]);
@@ -37,10 +39,12 @@ function UsersViewModel() {
         self.users(loadedUsers);
     });
 
+    // Set user as selected
     self.selectUser = function(user) {
         self.selectedUser(user);
     };
 
+    // Create a new user
     self.createUser = function() {
         var postUrl = API_BASE + "/users/create",
             form = $('#form-create'),
@@ -65,6 +69,7 @@ function UsersViewModel() {
         });
     };
 
+    // Save user data
     self.saveUser = function(user) {
         var postUrl = API_BASE + "/users/update/" + user.id,
             form = $('#form-save'),
@@ -79,6 +84,7 @@ function UsersViewModel() {
         });
     };
 
+    // Delete user
     self.deleteUser = function(user) {
         var postUrl = API_BASE + "/users/delete/" + user.id;
 
