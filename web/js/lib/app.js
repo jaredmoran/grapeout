@@ -1,4 +1,4 @@
-var API_HOST = "http://localhost:9000/",
+var API_HOST = "http://grapeout.herokuapp.com/",
     API_VERSION = "v1",
     API_BASE = API_HOST + API_VERSION,
     view;
