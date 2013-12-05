@@ -1,0 +1,102 @@
+<!doctype html>
+<html>
+    <head>
+        <title>GrapeOut</title>
+        <link href="css/master.css" rel="stylesheet" />
+    </head>
+    <body>
+        <div class="row">
+            <div class="small-12 column">
+                <h1>GrapeOut</h1>
+                <p>Select an existing user to view/edit or create a new user below.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="small-12 medium-4 column">
+                <div data-bind="visible: users().length > 0">
+                    <h3>Users</h3>
+
+                    <ul data-bind="foreach: users">
+                        <li>
+                            <a href="#" data-bind="text: fullName, click: $parent.selectUser, css: { selected: isActive }"></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="small-12 medium-8 column">
+                <div data-bind="if: selectedUser()">
+                    <h3>Selected User</h3>
+                    <form id="form-save">
+                        <div class="row">
+                            <div class="small-12 medium-6 column">
+                                <input type="text" name="first_name" data-bind="value: selectedUser().first_name" />
+                            </div>
+                            <div class="small-12 medium-6 column">
+                                <input type="text" name="last_name" data-bind="value: selectedUser().last_name" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="small-12 medium-6 column">
+                                <input type="email" name="email" data-bind="value: selectedUser().email" />
+                            </div>
+                            <div class="small-12 medium-6 column">
+                                <input type="text" name="username" data-bind="value: selectedUser().username" />
+                            </div>
+                        </div>
+                        <div class="row collapse">
+                            <div class="small-3 medium-2 columns">
+                                <span class="prefix">http://</span>
+                            </div>
+                            <div class="small-9 medium-10 columns">
+                                <input type="text" data-bind="value: selectedUser().url" />
+                            </div>
+                        </div>
+
+
+                    </form>
+
+                    <button class="button tiny radius" data-bind="click: function(){ saveUser( selectedUser() )}">Save</button>
+                    <button class="button tiny radius" data-bind="click: function(){ deleteUser( selectedUser() )}">Delete</button>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="medium-6 column">
+                <form id="form-create" data-bind="submit: createUser">
+                    <h3>Create User</h3>
+                    <div class="row">
+                        <div class="small-12 medium-6 column">
+                            <input type="text" name="first_name" placeholder="First Name" required />
+                        </div>
+                        <div class="small-12 medium-6 column">
+                            <input type="text" name="last_name" placeholder="Last Name" required />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="small-12 medium-6 column">
+                            <input type="email" name="email" placeholder="Email" required />
+                        </div>
+                        <div class="small-12 medium-6 column">
+                            <input type="text" name="username" placeholder="Username" required />
+                        </div>
+                    </div>
+                    <div class="row collapse">
+                        <div class="small-3 medium-2 columns">
+                            <span class="prefix">http://</span>
+                        </div>
+                        <div class="small-9 medium-10 columns">
+                            <input type="text" placeholder="Enter your URL...">
+                        </div>
+                    </div>
+
+                    <button class="button tiny radius" type="submit">Create</button>
+                </form>
+            </div>
+        </div>
+
+        <script src="js/dist/grape-out.js"></script>
+    </body>
+</html>
