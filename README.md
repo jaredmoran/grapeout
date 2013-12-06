@@ -35,7 +35,7 @@ API will be available at: http://localhost:9000/v1/
 * `/users/:id` - list details for user with user.id == :id
 * `/users/create` - create new user (POST)
 * `/users/update/:id` - update user with user.id == :id (POST)
-* `/users/delate/:id` - delete user with user.id == :id (POST)
+* `/users/delete/:id` - delete user with user.id == :id (POST)
 
 ### The Client
 
